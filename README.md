@@ -22,3 +22,6 @@
     - Started server and make the server Lister 
     - Installed nodemon Globally
     - Pushing into Git
+    - Explored the http methods and implemented it
+    - Explored the query and route params
+    - Explored multiple route handlers
