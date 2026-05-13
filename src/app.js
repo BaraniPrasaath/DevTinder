@@ -2,25 +2,34 @@ const express = require("express");
 
 const app = express();
 
-app.post("/user",(req, res)=>{
-    //Created the User
-    res.send("User Created Seccessfully");
-})
+// app.post("/user",(req, res)=>{
+//     //Created the User
+//     res.send("User Created Seccessfully");
+// })
 
+// Query Params
 app.get("/user",(req, res)=>{
     //Getting the data
+    console.log(req.query)
     res.send({firstName: "Barani Prasaath", lastName: "D"});
 })
 
-app.put("/user",(req, res)=>{
-    //Update the User
-    res.send("User is Updated");
-})
+// // Route Params
+// app.get("/user",(req, res)=>{
+//     //Getting the data
+//     console.log(req.params)
+//     res.send({firstName: "Barani Prasaath", lastName: "D"});
+// })
 
-app.delete("/user",(req, res)=>{
-    //Delete the data
-    res.send("The user is deleted");
-})
+// app.put("/user",(req, res)=>{
+//     //Update the User
+//     res.send("User is Updated");
+// })
+
+// app.delete("/user",(req, res)=>{
+//     //Delete the data
+//     res.send("The user is deleted");
+// })
 
 
 // app.use("/test", (req, res)=>{
