@@ -6,6 +6,29 @@ const app = express();
 
 app.use(express.json());
 
+app.get("/profile", async (req, res) => {
+  const userMailId = req.body.emailId;
+  try {
+    const users = await User.find({ emailId: userMailId });
+    if (users.length) {
+      res.send(users);
+    } else {
+      res.status(404).send("User Not Found");
+    }
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+app.get("/feed", async (req, res) => {
+  try {
+    const users = await User.find({});
+    res.send(users);
+  } catch (err) {
+    res.send(err);
+  }
+});
+
 app.post("/signup", async (req, res) => {
   const user = new User(req.body);
 
